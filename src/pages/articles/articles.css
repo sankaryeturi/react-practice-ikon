@@ -1,0 +1,16 @@
+.articleForm {
+    background-color: #F8F8F8;
+    border: 1px solid #f4f2f3;
+    padding: 15px;
+}
+
+.rdw-editor-toolbar  {
+    margin-bottom: 0 !important;
+    border: 1px solid #ced4da !important;
+    border-bottom: 0 !important;
+}
+.rdw-editor-main {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    min-height: 150px;
+}
