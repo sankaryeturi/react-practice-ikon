@@ -7,21 +7,21 @@ import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const languageInfo = [
-  { key: '', text: 'Select', value: '' },
-  { key: 'en', text: 'English', value: 'eng' },
-  { key: 'tel', text: 'Telugu', value: 'tel' },
+  { key: '', name: 'Select', value: '' },
+  { key: 'en', name: 'English', value: 'eng' },
+  { key: 'tel', name: 'Telugu', value: 'tel' },
 ];
 
 const categoryInfo = [
-  { key: '', text: 'Select', value: '' },
-  { key: 'cat1', text: 'Category 1', value: 'cat1' },
-  { key: 'cat2', text: 'Category 2', value: 'cat2' },
+  { key: '', name: 'Select', value: '' },
+  { key: 'cat1', name: 'Category 1', value: 'cat1' },
+  { key: 'cat2', name: 'Category 2', value: 'cat2' },
 ];
 
 const subCategoryInfo = [
-  { key: '', text: 'Select', value: '' },
-  { key: 'subCat1', text: 'Sub Category 1', value: 'subCat1' },
-  { key: 'subCat2', text: 'Sub Category 2', value: 'subCat2' },
+  { key: '', name: 'Select', value: '' },
+  { key: 'subCat1', name: 'Sub Category 1', value: 'subCat1' },
+  { key: 'subCat2', name: 'Sub Category 2', value: 'subCat2' },
 ];
 
 class Articles extends Component {
@@ -55,9 +55,9 @@ class Articles extends Component {
                 <Form.Group as={Col} controlId="formGridLanguage">
                   <Form.Label>Language</Form.Label>
                   <Form.Control as="select" required>
-                    <option value="">Select Language</option>
-                    <option value="tel">Telugu</option>
-                    <option value="eng">English</option>
+                    {languageInfo.map((e, key) => {
+                        return <option key={key} value={e.value}>{e.name}</option>;
+                    })}                    
                   </Form.Control>
                   <Form.Control.Feedback type="invalid">
                     Please select language.
@@ -67,10 +67,10 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridCategory">
                   <Form.Label>Category</Form.Label>
-                  <Form.Control as="select" required>
-                    <option value="">Select Category</option>
-                    <option value="cat1">Category 1</option>
-                    <option value="cat2">Category 2</option>
+                  <Form.Control as="select" required>                  
+                    {categoryInfo.map((e, key) => {
+                        return <option key={key} value={e.value}>{e.name}</option>;
+                    })}
                   </Form.Control>
                   <Form.Control.Feedback type="invalid">
                     Please select category.
@@ -81,9 +81,9 @@ class Articles extends Component {
                 <Form.Group as={Col} controlId="formGridSubCategory">
                   <Form.Label>Sub Category</Form.Label>
                   <Form.Control as="select" required>
-                    <option value="">Select Sub Category</option>
-                    <option value="subcat1">Sub Category 1</option>
-                    <option value="subcat2">Sub Category 2</option>
+                    {subCategoryInfo.map((e, key) => {
+                        return <option key={key} value={e.value}>{e.name}</option>;
+                    })}
                   </Form.Control>
                   <Form.Control.Feedback type="invalid">
                     Please select sub category.
