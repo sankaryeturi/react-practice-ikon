@@ -8,7 +8,7 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 const languageInfo = [
   { key: '', name: 'Select', value: '' },
-  { key: 'en', name: 'English', value: 'eng' },
+  { key: 'eng', name: 'English', value: 'eng' },
   { key: 'tel', name: 'Telugu', value: 'tel' },
 ];
 
@@ -54,7 +54,10 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridLanguage">
                   <Form.Label>Language</Form.Label>
-                  <Form.Control as="select" required>
+                  <Form.Control as="select" 
+                    required 
+                    value={articleFormData.fields.languageInfo}
+                    onChange={handleChange}>
                     {languageInfo.map((e, key) => {
                         return <option key={key} value={e.value}>{e.name}</option>;
                     })}                    
@@ -67,7 +70,10 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridCategory">
                   <Form.Label>Category</Form.Label>
-                  <Form.Control as="select" required>                  
+                  <Form.Control as="select" 
+                    required 
+                    value={articleFormData.fields.categoryInfo}
+                    onChange={handleChange}> 
                     {categoryInfo.map((e, key) => {
                         return <option key={key} value={e.value}>{e.name}</option>;
                     })}
@@ -80,7 +86,10 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridSubCategory">
                   <Form.Label>Sub Category</Form.Label>
-                  <Form.Control as="select" required>
+                  <Form.Control as="select" 
+                    required
+                    value={articleFormData.fields.subCategoryInfo}
+                    onChange={handleChange}> 
                     {subCategoryInfo.map((e, key) => {
                         return <option key={key} value={e.value}>{e.name}</option>;
                     })}
@@ -95,7 +104,12 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridArticletitle">
                   <Form.Label>Article Title</Form.Label>
-                  <Form.Control required type="input" placeholder="Article title" />
+                  <Form.Control 
+                    required 
+                    type="input" 
+                    placeholder="Article title" 
+                    value={articleFormData.fields['articleTitle']}
+                    onChange={handleChange}/>
                   <Form.Control.Feedback type="invalid">
                     Please provide Article title.
                   </Form.Control.Feedback>
@@ -106,7 +120,7 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridArticle">
                   <Form.Label>Article</Form.Label>
-                  <Editor 
+                  <Editor value={articleFormData.fields.articleDescription}
                     toolbarClassName="toolbarClassName"
                     wrapperClassName="wrapperClassName"
                     editorClassName="editorClassName" />
@@ -117,7 +131,11 @@ class Articles extends Component {
               <Col>
                 <Form.Group as={Col} controlId="formGridKeyword">
                   <Form.Label>Keywords (Upto 50 Keywords)</Form.Label>
-                  <Form.Control type="input" required placeholder="Enter Keywords" />
+                  <Form.Control type="input" 
+                    required 
+                    placeholder="Enter Keywords" 
+                    value={articleFormData.fields.articleKeywords}
+                    onChange={handleChange} />
                   <Form.Control.Feedback type="invalid">
                     Please provide Keywords.
                   </Form.Control.Feedback>

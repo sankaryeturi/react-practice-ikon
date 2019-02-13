@@ -29,7 +29,7 @@ class ArticlesContainer extends Component {
       this.articleFormData = {
         fields: {
           articleTitle: 'This is test article',
-          languageInfo: 'en',
+          languageInfo: 'eng',
           categoryInfo: 'cat2',
           subCategoryInfo: 'subCat2',
           articleDescription: 'This is test description',
@@ -73,45 +73,8 @@ class ArticlesContainer extends Component {
   // input onchange functionality
   handleChange(field, e){   
     let fieldsVal = this.articleFormData.fields;
-    fieldsVal[field] = e.target.value;        
+    //fieldsVal[field] = e.target.value;        
     //this.setState({fieldsVal});
-  }
-
-  // form validation
-  handleValidation(){
-    let fields = this.articleFormData.fields;
-    let errors = {};
-    let formIsValid = true;
-    //console.log(this.articleFormData.fields);
-    
-    //article title
-    if(!fields["articleTitle"]){
-      formIsValid = false;
-      this.articleFormData.errors.articleTitle = true;
-      //errors["articleTitle"] = "Cannot be empty";
-      //console.log("error");
-    }
-
-    //Name
-    if(!fields["languageInfo"]){
-      formIsValid = false;
-      errors["languageInfo"] = "Cannot be empty";
-    }
-
-    if(!fields["categoryInfo"]){
-      formIsValid = false;
-      errors["categoryInfo"] = "Cannot be empty";
-    }
-
-    if(!fields["subCategoryInfo"]){
-      formIsValid = false;
-      errors["subCategoryInfo"] = "Cannot be empty";
-    }
-
-    //this.setState({errors: errors});
-     //console.log(errors);
-    return formIsValid;
-
   }
 
   render() {
