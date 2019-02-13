@@ -24,7 +24,6 @@ class ArticlesContainer extends Component {
     };
     
     this.handleChange = this.handleChange.bind(this);
-    //this.handleSubmit = this.handleSubmit.bind(this);
     // pass dynamic form data based on url parameter
     if((!parems.articleId == "") || (!parems.articleId == "undefined") || (!parems.articleId == undefined)) {
       this.articleFormData = {

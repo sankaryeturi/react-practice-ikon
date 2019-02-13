@@ -14,3 +14,12 @@
     border: 1px solid #ced4da;
     min-height: 150px;
 }
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: #ced4da;
+    background-image: none;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: none;
+}
