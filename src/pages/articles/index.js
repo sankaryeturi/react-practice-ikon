@@ -3,40 +3,28 @@ import Articles from './Articles';
 
 class ArticlesContainer extends Component {
 
-  componentDidMount () {
-    const { handle } = this.props.match.params;
-  }
-
   constructor(props) {
     super(props);
+
+    // get the URL parameter
     const parems =this.props.match.params;
-    this.articleFormData = {
-      fields: {
-        articleTitle: ''
-      },
-      errors: {
-        languageInfo: false,
-        categoryInfo: false,
-        subCategoryInfo: false,
-        articleTitle: false,
-        articleKeywords: false
-      }
+
+    // defining the article form object
+    this.state = {
+      fields: {}
     };
     
-    this.handleChange = this.handleChange.bind(this);
+
+    this.handleChange = this.handleChange.bind(this);    
     // pass dynamic form data based on url parameter
     if((!parems.articleId == "") || (!parems.articleId == "undefined") || (!parems.articleId == undefined)) {
-      this.articleFormData = {
-        fields: {
-          articleTitle: 'This is test article',
-          languageInfo: 'eng',
-          categoryInfo: 'cat2',
-          subCategoryInfo: 'subCat2',
-          articleDescription: 'This is test description',
-          articleKeywords: 'Test Keyword'
-        },
-        errors: {}
-      };
+      fetch("http://localhost:4000/Articles/" + parems.articleId)      
+      .then(result => {
+        return result.json();
+      })
+      .then(
+        data => this.setState({ articleFormData:data })
+      )          
     } 
   }
 
@@ -72,7 +60,8 @@ class ArticlesContainer extends Component {
 
   // input onchange functionality
   handleChange(field, e){   
-    let fieldsVal = this.articleFormData.fields;
+    console.log(this.state)
+    let fieldsVal = this.articleFormData;
     //fieldsVal[field] = e.target.value;        
     //this.setState({fieldsVal});
   }
@@ -82,7 +71,7 @@ class ArticlesContainer extends Component {
       <Articles
         {...{
           articleSubmit: this.articleSubmit,
-          articleFormData: this.articleFormData,
+          articleFormData: this.state,
           handleChange: this.handleChange
         }}
       />

@@ -43,7 +43,8 @@ class Articles extends Component {
 
   render() {
     const { value, articleFormData, articleSubmit,handleChange } = this.props
-    const { validated } = this.state;;
+    const { validated } = this.state;
+    //console.log(articleFormData)
     return (
       <Container className="mt-4">
         <div className="articleForm">
