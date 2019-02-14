@@ -50,7 +50,7 @@ class Articles extends Component {
         <div className="articleForm">
           <Form noValidate
                 validated={validated}
-                onSubmit={e => this.handleSubmit(e)} >       
+                onSubmit={articleSubmit} >       
             <Form.Row>
               <Col>
                 <Form.Group as={Col} controlId="formGridLanguage">

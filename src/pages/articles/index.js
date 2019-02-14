@@ -32,11 +32,6 @@ class ArticlesContainer extends Component {
   articleSubmit = e => {
     alert()
     e.preventDefault();
-
-     if(this.handleValidation()){
-      //console.log(this.articleFormData);  
-     }
-
     fetch('http://ikondev1.cloudapp.net/api/auth_db', {
       method: 'POST',
       headers: {
@@ -44,12 +39,13 @@ class ArticlesContainer extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        articleTitle: this.articleFormData.fields.articleTitle,
-        articleLanguage : this.articleFormData.fields.languageInfo,
-        articleCategory : this.articleFormData.fields.categoryInfo,
-        articleSuvCategory : this.articleFormData.fields.subCategoryInfo,
-        articleDescription : this.articleFormData.fields.articleDescription,
-        articleKeywords : this.articleFormData.fields.articleKeywords,
+        data:this.state.articleFormData
+        // articleTitle: this.articleFormData.fields.articleTitle,
+        // articleLanguage : this.articleFormData.fields.languageInfo,
+        // articleCategory : this.articleFormData.fields.categoryInfo,
+        // articleSuvCategory : this.articleFormData.fields.subCategoryInfo,
+        // articleDescription : this.articleFormData.fields.articleDescription,
+        // articleKeywords : this.articleFormData.fields.articleKeywords,
       }),
     })
     .then(resp => resp.json())
