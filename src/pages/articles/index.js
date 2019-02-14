@@ -59,11 +59,11 @@ class ArticlesContainer extends Component {
   }
 
   // input onchange functionality
-  handleChange(field, e){   
-    console.log(this.state)
-    let fieldsVal = this.articleFormData;
-    //fieldsVal[field] = e.target.value;        
+  handleChange(field, e){       
+    let fieldsVal = this.state.articleFormData;
+    fieldsVal[field] = e.target.value;        
     //this.setState({fieldsVal});
+    console.log(this.state.articleFormData);
   }
 
   render() {

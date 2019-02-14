@@ -44,7 +44,7 @@ class Articles extends Component {
   render() {
     const { value, articleFormData, articleSubmit,handleChange } = this.props
     const { validated } = this.state;
-    //console.log(articleFormData)
+    console.log(articleFormData.articleFormData)
     return (
       <Container className="mt-4">
         <div className="articleForm">
@@ -57,8 +57,9 @@ class Articles extends Component {
                   <Form.Label>Language</Form.Label>
                   <Form.Control as="select" 
                     required 
-                    value={articleFormData.fields.languageInfo}
-                    onChange={handleChange}>
+                    value={articleFormData.fields.languageInfo}                    
+                    onChange={handleChange.bind(this, "language")}
+                  >
                     {languageInfo.map((e, key) => {
                         return <option key={key} value={e.value}>{e.name}</option>;
                     })}                    
@@ -74,7 +75,7 @@ class Articles extends Component {
                   <Form.Control as="select" 
                     required 
                     value={articleFormData.fields.categoryInfo}
-                    onChange={handleChange}> 
+                    onChange={handleChange.bind(this, "category")}> 
                     {categoryInfo.map((e, key) => {
                         return <option key={key} value={e.value}>{e.name}</option>;
                     })}
@@ -90,7 +91,7 @@ class Articles extends Component {
                   <Form.Control as="select" 
                     required
                     value={articleFormData.fields.subCategoryInfo}
-                    onChange={handleChange}> 
+                    onChange={handleChange.bind(this, "subCategory")}> 
                     {subCategoryInfo.map((e, key) => {
                         return <option key={key} value={e.value}>{e.name}</option>;
                     })}
@@ -110,7 +111,7 @@ class Articles extends Component {
                     type="input" 
                     placeholder="Article title" 
                     value={articleFormData.fields['articleTitle']}
-                    onChange={handleChange}/>
+                    onChange={handleChange.bind(this, "articleTitle")}/>
                   <Form.Control.Feedback type="invalid">
                     Please provide Article title.
                   </Form.Control.Feedback>
@@ -136,7 +137,7 @@ class Articles extends Component {
                     required 
                     placeholder="Enter Keywords" 
                     value={articleFormData.fields.articleKeywords}
-                    onChange={handleChange} />
+                    onChange={handleChange.bind(this, "keywords")} />
                   <Form.Control.Feedback type="invalid">
                     Please provide Keywords.
                   </Form.Control.Feedback>
