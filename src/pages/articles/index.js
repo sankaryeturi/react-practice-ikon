@@ -1,5 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
 import Articles from './Articles';
+import { FETCH_ARTICLEINFO, CREATE_ARTICLE, setRoutines} from './articles.action';
+import SideNav from '../../components/common/SideNav';
+import Header from '../../components/common/Header/Header';
+import TitleBar from '../../components/common/TitleBar';
+
+const mapStateToProps = state => ({
+  
+});
+
+const mapDispatchToProps = dispatch => ({
+    //articleFetch: () => dispatch(firebaseLogout()),
+    articleCreate: () => dispatch(), 
+    //articleView: () => dispatch(setExercises()),
+});
 
 class ArticlesContainer extends Component {
 
@@ -11,10 +27,12 @@ class ArticlesContainer extends Component {
 
     // defining the article form object
     this.state = {
-      fields: {}
+      fields: {},
+      articleFormData: {
+        fields: {}
+      }
     };
     
-
     this.handleChange = this.handleChange.bind(this);    
     // pass dynamic form data based on url parameter
     if((!parems.articleId == "") || (!parems.articleId == "undefined") || (!parems.articleId == undefined)) {
@@ -57,6 +75,7 @@ class ArticlesContainer extends Component {
   // input onchange functionality
   handleChange(field, e){       
     let fieldsVal = this.state.articleFormData;
+    console.log(field)
     fieldsVal[field] = e.target.value;        
     //this.setState({fieldsVal});
     console.log(this.state.articleFormData);
@@ -64,15 +83,25 @@ class ArticlesContainer extends Component {
 
   render() {
     return (
-      <Articles
-        {...{
-          articleSubmit: this.articleSubmit,
-          articleFormData: this.state,
-          handleChange: this.handleChange
-        }}
-      />
+      <div style={{width: "100%"}}>
+        <SideNav />
+        <div style={{marginLeft: "150px"}}>
+          <Header />
+          <TitleBar />
+          <Articles
+            {...{
+                  articleSubmit: this.articleSubmit,
+                  articleFormData: this.state,
+                  handleChange: this.handleChange
+                }}
+          />
+        </div>
+      </div>
     );
   }
 }
 
-export default (ArticlesContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+) (ArticlesContainer);

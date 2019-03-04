@@ -16,7 +16,6 @@ const mapDispatchToProps = dispatch => ({
     });
   },
 });
-
 class LoginContainer extends Component {
   constructor(props) {
     super(props);

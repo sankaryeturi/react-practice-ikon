@@ -1,0 +1,7 @@
+.title-bar {
+  background: #F4F2F3;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #cecece;
+  border-right-width: 0;
+}

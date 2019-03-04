@@ -1,0 +1,28 @@
+.articleForm {
+    background-color: #F8F8F8;
+    border: 1px solid #f4f2f3;
+    padding: 15px;
+}
+
+.rdw-editor-toolbar  {
+    margin-bottom: 0 !important;
+    border: 1px solid #ced4da !important;
+    border-bottom: 0 !important;
+}
+.rdw-editor-main {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    min-height: 150px;
+    max-height: 500px;  
+    overflow: scroll;
+    padding: 0 10px;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: #ced4da;
+    background-image: none;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    background-image: none;
+}

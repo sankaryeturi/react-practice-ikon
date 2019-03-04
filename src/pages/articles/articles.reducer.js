@@ -1,15 +1,18 @@
-import { ARTICLES_SUCCESS } from './articles.actions';
+import { FETCH_ARTICLEINFO } from './articles.actions';
 
-const initialState = {
-  isLoggedin: false,
-};
 
 export default function articlesReducer(state = initialState, action) {
   switch (action.type) {
-    case ARTICLES_SUCCESS:
+    case CREATE_ARTICLE:
       return {
         ...state,
-        isLoggedin: true,
+        view: action.payload
+      };
+
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        fetchArticles: true,
         ...action.payload,
       };
     default:

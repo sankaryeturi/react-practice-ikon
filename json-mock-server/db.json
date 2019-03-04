@@ -7,7 +7,8 @@
 	  "subCategory": "subCat2",
 	  "articleDescription": "This is test description for article one",
 	  "keywords": "This is for article keywords",
-	  "attachments":""
+	  "attachments":"",
+	  "status": "draft"
 	},
 	{ "id": 2, 
 	  "articleTitle": "This is second article", 
@@ -16,7 +17,8 @@
 	  "subCategory": "subCat1",
 	  "articleDescription": "This is test description for article two",
 	  "keywords": "This is for article keywords",
-	  "attachments":""
+	  "attachments":"",
+	  "status": "rework"
 	},
 	{ "id": 3, 
 	  "articleTitle": "This is third article", 
@@ -25,7 +27,8 @@
 	  "subCategory": "subCat3",
 	  "articleDescription": "This is test description for article third",
 	  "keywords": "This is for article keywords",
-	  "attachments":""
+	  "attachments":"",
+	  "status": "pending"
 	},
 	{ "id": 4, 
 	  "articleTitle": "This is fourth article", 
@@ -34,8 +37,69 @@
 	  "subCategory": "subCat1",
 	  "articleDescription": "This is test description for article fourth",
 	  "keywords": "This is for article keywords",
-	  "attachments":""
-	} 
+	  "attachments":"",
+	  "status": "reject"
+	},
+	{ "id": 5, 
+	  "articleTitle": "This is fifth article", 
+	  "language": "mal",
+	  "category": "cat2",
+	  "subCategory": "subCat1",
+	  "articleDescription": "This is test description for article fifth",
+	  "keywords": "This is for article keywords",
+	  "attachments":"",
+	  "status": "published"
+	},
+	{ "id": 6, 
+	  "articleTitle": "This is first article", 
+	  "language": "eng",
+	  "category": "cat1",
+	  "subCategory": "subCat2",
+	  "articleDescription": "This is test description for article one",
+	  "keywords": "This is for article keywords",
+	  "attachments":"",
+	  "status": "draft"
+	},
+	{ "id": 7, 
+	  "articleTitle": "This is second article", 
+	  "language": "tel",
+	  "category": "cat2",
+	  "subCategory": "subCat1",
+	  "articleDescription": "This is test description for article two",
+	  "keywords": "This is for article keywords",
+	  "attachments":"",
+	  "status": "rework"
+	},
+	{ "id": 8, 
+	  "articleTitle": "This is third article", 
+	  "language": "hin",
+	  "category": "cat3",
+	  "subCategory": "subCat3",
+	  "articleDescription": "This is test description for article third",
+	  "keywords": "This is for article keywords",
+	  "attachments":"",
+	  "status": "pending"
+	},
+	{ "id": 9, 
+	  "articleTitle": "This is fourth article", 
+	  "language": "mal",
+	  "category": "cat2",
+	  "subCategory": "subCat1",
+	  "articleDescription": "This is test description for article fourth",
+	  "keywords": "This is for article keywords",
+	  "attachments":"",
+	  "status": "reject"
+	},
+	{ "id": 10, 
+	  "articleTitle": "This is fifth article", 
+	  "language": "mal",
+	  "category": "cat2",
+	  "subCategory": "subCat1",
+	  "articleDescription": "This is test description for article fifth",
+	  "keywords": "This is for article keywords",
+	  "attachments":"",
+	  "status": "published"
+	}
   ],
   
   "category": [

@@ -1,1 +1,0 @@
-export const ARTICLES_SUCCESS = 'ARTICLES_SUCCESS';

@@ -1,0 +1,25 @@
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.logo img{
+  width: 120px ;
+  height: 60px;
+  padding: 10px;
+}
+
+.logo {
+  border-bottom: 1px solid #052736;
+  margin-bottom: 20px;
+}
+
+.nav-item:hover {
+  background-color: #0182C3 !important;
+}
