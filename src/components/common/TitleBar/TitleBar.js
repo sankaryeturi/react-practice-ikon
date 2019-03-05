@@ -4,10 +4,15 @@ import { Button } from 'semantic-ui-react'
 import './title.css'
 
 const TitleBar = () => (
-  <h2 className="title-bar">
-    Dashboard
-    <Button  circular basic color='green' style={{float: "right"}}>Create Article</Button>
-  </h2>
+  <div>
+    <h2 className="title-bar">
+      Dashboard
+      <Button  circular basic color='green' style={{float: "right"}}>Create Article</Button>
+    </h2>
+    {/* <h2 className="title-bar">
+      Create Article
+    </h2> */}
+  </div>  
 )
 
 TitleBar.propTypes = {

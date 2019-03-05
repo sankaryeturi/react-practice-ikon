@@ -30,7 +30,8 @@ class ArticlesContainer extends Component {
       fields: {},
       articleFormData: {
         fields: {}
-      }
+      },
+      valArr: []
     };
     
     this.handleChange = this.handleChange.bind(this);    
@@ -81,6 +82,33 @@ class ArticlesContainer extends Component {
     console.log(this.state.articleFormData);
   }
 
+  //article filter
+  filterClick = (event) => {
+		const target = event.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+		const val = target.value;
+		let { valArr } = this.state;
+		let index = valArr.indexOf(val);
+		if (index != -1)
+			valArr.splice(index, 1);
+			else
+		  valArr.push(val);
+		this.setState({ valArr });
+		console.log(this.state.valArr);
+  }
+  click = (event) => {
+		console.log(event);
+		document.querySelectorAll('input[type=checkbox]').forEach( event => event.checked = false );
+		this.state = {
+			valArr: []
+		}
+	}
+
+	clearCategory = (event) => {
+		document.querySelectorAll('input[type=checkbox]').forEach( event => event.checked = false );
+	}
+  
   render() {
     return (
       <div style={{width: "100%"}}>
@@ -92,7 +120,10 @@ class ArticlesContainer extends Component {
             {...{
                   articleSubmit: this.articleSubmit,
                   articleFormData: this.state,
-                  handleChange: this.handleChange
+                  handleChange: this.handleChange,
+                  filterClick: this.filterClick,
+                  click:this.click,
+			            clearCategory:this.clearCategory
                 }}
           />
         </div>

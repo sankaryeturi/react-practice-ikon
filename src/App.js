@@ -4,6 +4,7 @@ import Login from './pages/login';
 import Dashboard from './pages/dashboard';
 import Articles from './pages/articles';
 import Practice from './pages/practice';
+import Refinment from './pages/refinments';
 import Header from './components/common/Header';
 import SideNav from './components/common/SideNav';
 
@@ -16,6 +17,7 @@ export default function App() {
         <Route exact path="/article-create" component={Articles} />
         <Route exact path="/Articles/:articleId" component={Articles} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/refinment" component={Refinment} />
         <Route exact path="/practice" component={Practice} />
         <Route render={() => <div>Miss</div>} />
       </Switch>

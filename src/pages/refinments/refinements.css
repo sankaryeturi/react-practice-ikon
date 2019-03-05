@@ -1,0 +1,12 @@
+.filter-wrapper{
+	/* border:1px solid #eee; */
+}
+.filter-options{
+	border-top:1px solid #eee;
+}
+.filter-options,.filter-title{
+	padding:5px;
+}
+.clear-check,.clearall-check{
+	float:right;
+}
